@@ -1,4 +1,9 @@
 <h1><%= @list.name %></h1>
 <h2><%= @list.id %></h2>
-
+<%= link_to 'Create a new bookmark', new_list_bookmark_path(@list) %>
 <%= link_to 'Back', lists_path %>
+<% @bookmarks.each do |b| %>
+  <%= b.movie.title %>
+  <%= b.comment %>
+  <%= link_to 'Delete this bookmark', bookmark_path(b), method: :delete %>
+<% end %>
