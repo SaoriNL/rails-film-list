@@ -1,5 +1,7 @@
-<%= simple_form_for [@list, @bookmark] do |b| %>
-  <%= b.input :comment %>
-  <%= b.association :movie %>
-  <%= b.button :submit %>
-<% end %>
+<div class="form-wrapper">
+  <%= simple_form_for [@list, @bookmark] do |b| %>
+    <%= b.input :comment %>
+    <%= b.association :movie %>
+    <button type="button" class="btn btn-success"><%= b.button :submit %></button>
+  <% end %>
+</div>

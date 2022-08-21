@@ -1,9 +1,23 @@
-<h1><%= @list.name %></h1>
-<h2><%= @list.id %></h2>
-<%= link_to 'Create a new bookmark', new_list_bookmark_path(@list) %>
-<%= link_to 'Back', lists_path %>
-<% @bookmarks.each do |b| %>
-  <%= b.movie.title %>
-  <%= b.comment %>
-  <%= link_to 'Delete this bookmark', bookmark_path(b), method: :delete %>
-<% end %>
+<div class="listheader">
+  <h1><%= @list.name %></h1>
+  <%= link_to new_list_bookmark_path(@list) do %>
+    <button type="button" class="btn btn-success button-font-default">Create a new bookmark</button>
+  <% end  %>
+  <%= link_to lists_path do %>
+    <button type="button" class="btn btn-primary button-font-default">Back</button>
+  <% end %>
+</div>
+<div class="bookmarks-cards">
+  <% @bookmarks.each do |b| %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag(b.movie.poster_url, :class => "card-img-top") %>
+      <div class="card-body bookmark-card">
+        <h5 class="card-title"><%= b.movie.title %></h5>
+        <p class="card-text"><%= b.comment %></p>
+        <%= link_to bookmark_path(b), method: :delete do %>
+          <button type="button" class="btn btn-danger btn-sm button-font-default">Delete bookmark</button>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
