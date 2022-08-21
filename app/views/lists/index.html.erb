@@ -1,6 +1,8 @@
 <div class="listheader">
-  Movie List
-  <button type="button" class="btn btn-success"><%= link_to 'make a new list', new_list_path %></button>
+  <h1>Movie List</h1>
+  <%= link_to new_list_path do %>
+    <button type="button" class="btn btn-success">make a new list</button>
+  <% end %>
 </div>
 
 <div class="cards">
