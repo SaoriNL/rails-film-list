@@ -28,10 +28,20 @@ array.each do |a|
 end
 
 alice = List.new(name: "Alice's List")
-alice.save!
+picture = File.open("#{Rails.root}/app/assets/images/alilist.jpg")
+alice.photo.attach(io: picture, filename: 'alice.png', content_type: 'image/png')
+p alice.save ? 'Alice saved successfully' : 'Alice failed to save'
 
+# jules = List.new(name: "Jules's List")
+# jules.save!
 jules = List.new(name: "Jules's List")
-jules.save!
+picture = File.open("#{Rails.root}/app/assets/images/juleslist2.JPG")
+jules.photo.attach(io: picture, filename: 'jules.png', content_type: 'image/png')
+p jules.save ? 'Jules saved successfully' : 'Jules failed to save'
 
+# kipkip = List.new(name: "Kipkip's List")
+# kipkip.save!
 kipkip = List.new(name: "Kipkip's List")
-kipkip.save!
+picture = File.open("#{Rails.root}/app/assets/images/kiplist.jpg")
+kipkip.photo.attach(io: picture, filename: 'kipkip.png', content_type: 'image/png')
+p kipkip.save ? 'Kipkip saved successfully' : 'Kipkip failed to save'
