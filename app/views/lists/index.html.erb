@@ -1,14 +1,15 @@
 <div class="listheader">
-  <h1>Movie List</h1>
+  <h1>Film List</h1>
   <%= link_to new_list_path do %>
     <button type="button" class="btn btn-success">make a new list</button>
   <% end %>
 </div>
-
 <div class="cards">
   <% @lists.each do |l| %>
     <%= link_to list_path(l) do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.mimik.nl/cache/film.2078/film-s1920x1920.jpg)"><%= l.name %></div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.mimik.nl/cache/film.2078/film-s1920x1920.jpg)">
+        <%= l.name %>
+      </div>
     <% end %>
   <% end %>
 </div>
